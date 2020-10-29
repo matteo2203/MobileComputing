@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fore
+  - Star
+  - End
+  - Enemy
+  - EnemyBullet
+  - HP
+  - PlayerBullet
+  - abisso
+  - Checkpoint
+  - GM
+  - SM
+  - NomeUtente
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Window
+  - Buttons
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Back
+    uniqueID: 3031811897
+    locked: 0
+  - name: Second
+    uniqueID: 315304571
+    locked: 0
+  - name: Entity
+    uniqueID: 1221331805
+    locked: 0
+  - name: First
+    uniqueID: 3145659869
+    locked: 0
+  - name: Fore
+    uniqueID: 2290380827
+    locked: 0
+  - name: Forerer
+    uniqueID: 1152413665
+    locked: 0
+  - name: Spike
+    uniqueID: 1499507747
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foremost
+    uniqueID: 3099479605
+    locked: 0

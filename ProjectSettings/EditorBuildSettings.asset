@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 60510e0ed73aa54448b46c925b8dcc4e
+  - enabled: 1
+    path: Assets/Scenes/Space.unity
+    guid: dd656be7ca1c0254eb605a407776e10a
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: 7c875edb0259a7c4fa452ab236f2034b
+  - enabled: 1
+    path: Assets/Scenes/Fortezza.unity
+    guid: f4daea69899701644917e030d6005bf0
+  - enabled: 0
+    path: Assets/Scenes/Fortress.unity
+    guid: ca36341233b725448ab25a8c1f77806f
+  m_configObjects: {}
