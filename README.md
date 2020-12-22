@@ -1,2 +1,0 @@
-# MobileComputing
-ciao ciao
