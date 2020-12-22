@@ -12,7 +12,7 @@ var con = mysql.createConnection({
   database: 'mobilecomputing'
 });
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
