@@ -55,7 +55,7 @@ app.get("/getUser", (req, res, next) => {
   con.query("SELECT * FROM utenti WHERE nome = ? AND psw = ?", [nome, password], (err, result) => {
     if(err) throw err;
     if(result.length > 0) {
-      res.status(200).send(result);
+      res.status(200).send(result[0]);
     } else {
       res.status(400).send('{"message": "Utente non trovato"}');
     }
