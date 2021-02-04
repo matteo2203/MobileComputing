@@ -12,12 +12,11 @@ var con = mysql.createConnection({
   database: 'mobilecomputing'
 });
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT || 3000, () => {
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
   });
-  console.log('cacca');
 });
 
 app.get("/livelli", (req, res, next) => {
@@ -76,22 +75,26 @@ app.get("/saveUserStatForLevel", (req, res, next) => {
   var livello = req.query.livello;
   var score = req.query.score;
   toUpdate = false;
-  con.query("SELECT score FROM punteggi WHERE id_utente = ? AND id_livello = ?", [idUtente, livello], (err, result) => {
+  var toSave = false;
+  con.query("SELECT DISTINCT score FROM punteggi WHERE id_utente = ? AND id_livello = ?", [idUtente, livello], (err, result) => {
     if(err) throw err;
-    if(result.score < score) toUpdate = true;
-  });
+    if(result.length === 0) toSave = true;
+    else
+      if(result[0].score < score) toUpdate = true;
 
-  if(!toUpdate) {
-    con.query("INSERT INTO punteggi VALUES (?, ?, ?)", [livello, idUtente, score], (err, result) => {
-      if(err) throw err;
-      res.status(200).send({status: "ok"});
-    });
-  } else {
-    con.query("UPDATE punteggi SET score = ? WHERE id_utente = ? AND id_livello = ?", [score, idUtente, livello], (err, result) => {
-      if(err) throw err;
-      res.status(200).send({status: "ok"});
-    });
-  }
+    if(toSave) {
+      con.query("INSERT INTO punteggi VALUES (?, ?, ?)", [livello, idUtente, score], (err, result) => {
+        if(err) throw err;
+        res.status(200).send({status: "ok"});
+      });
+    } 
+    if(toUpdate) {
+      con.query("UPDATE punteggi SET score = ? WHERE id_utente = ? AND id_livello = ?", [score, idUtente, livello], (err, result) => {
+        if(err) throw err;
+        res.status(200).send({status: "ok"});
+      });
+    }
+  });
 });
 
 app.get("/getRankForLevels", (req, res, next) => {
